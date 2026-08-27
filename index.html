@@ -1,33 +1,59 @@
-<!DOCTYPE html>
-<html>
+                                                                <!DOCTYPE html>
+<html lang="es">
 <head>
-  <title>Portafolio Graficación</title>
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-  <style>
-    body { font-family: Arial; text-align: center; background: #111; color: white; }
-    header { padding: 20px; background: #222; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficación | ISC</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Medina_Tamayo_Arturo_Uriel</h1>
-    <p>No. Control: 251K0045 - Carrera: Ing. Sistemas</p>
-  </header>
-  <main>
-    <h2>Mis prácticas de p5.js</h2>
-    <div id="canvas"></div>
-  </main>
-  <script>
-    // Aquí irá tu primera práctica
-    function setup(){
-      let cnv = createCanvas(400,400);
-      cnv.parent('canvas');
-    }
-    function draw(){
-      background(20);
-      fill(0,255,100);
-      ellipse(mouseX, mouseY, 50, 50);
-    }
-  </script>
+
+    <header>
+        <h1>Portafolio web de Prácticas - Graficación</h1>
+        <p><strong>Alumno:</strong> [Arturo_Uriel_Medina_Tamayo] | <strong>Matrícula:</strong> [251k0045]</p>
+        <p>Ingeniería en Sistemas Computacionales - 3er Semestre</p>
+    </header>
+
+    <main>
+        <section class="unidad-seccion">
+            <h2>Unidad 1: Introducción a los ambientes de graficación</h2>
+            <div class="grid-actividades">
+                
+                <div class="tarjeta-actividad">
+                    <h3>Actividad 1.1: Primitivas</h3>
+                    <p>Modelado geométrico estático de un logotipo institucional mediante primitivas bidimensionales aplicadas en p5.js.</p>
+                    <a href="#" target="_blank" class="btn-enlace">Ver Proyecto 2D</a>
+                </div>
+
+                <div class="tarjeta-actividad">
+                    <h3>Actividad 1.2: Colores</h3>
+                    <p>Aplicación de los formatos para uso de colores en el lienzo.</p>
+                    <a href="#" target="_blank" class="btn-enlace">Ver Proyecto </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="unidad-seccion">
+            <h2>Unidad 2: Graficación 2D</h2>
+            <div class="grid-actividades">
+                
+                <div class="tarjeta-actividad">
+                    <h3>Actividad 2.1: Traslación</h3>
+                    <p>Implementación de transformaciones lineales (traslación y rotación) aislando la matriz gráfica mediante push() y pop().</p>
+                    <a href="#" target="_blank" class="btn-enlace">Ver Proyecto</a>
+                </div>
+
+                <div class="tarjeta-actividad">
+                    <h3>Actividad 2.2: Mini-Proyecto </h3>
+                    <p>Replica de un videojuego clásico aplicando Programación Orientada a Objetos, lógica de colisiones y vectores.</p>
+                    <a href="#" target="_blank" class="btn-enlace">Jugar Ahora</a>
+                </div>
+
+            </div>
+        </section>
+
+        </main>
+
 </body>
 </html>
