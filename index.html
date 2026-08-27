@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portafolio Graficación</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <style>
+    body { font-family: Arial; text-align: center; background: #111; color: white; }
+    header { padding: 20px; background: #222; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Medina_Tamayo_Arturo_Uriel</h1>
+    <p>No. Control: 251K0045 - Carrera: Ing. Sistemas</p>
+  </header>
+  <main>
+    <h2>Mis prácticas de p5.js</h2>
+    <div id="canvas"></div>
+  </main>
+  <script>
+    // Aquí irá tu primera práctica
+    function setup(){
+      let cnv = createCanvas(400,400);
+      cnv.parent('canvas');
+    }
+    function draw(){
+      background(20);
+      fill(0,255,100);
+      ellipse(mouseX, mouseY, 50, 50);
+    }
+  </script>
+</body>
+</html>
