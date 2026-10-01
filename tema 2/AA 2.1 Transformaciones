@@ -1,0 +1,85 @@
+function setup() {
+  createCanvas(800, 300); 
+  angleMode(DEGREES);
+}
+
+// Fondo azul cielo suave
+function draw() {
+  background(220, 240, 255); 
+
+  // ETAPA 1: Pollito 
+  push();
+    translate(80, 180);              
+    scale(0.8);                     
+    rotate(-5);                  
+    drawAnimal(color(255, 240, 150), 3, 10); 
+  pop();
+  
+  // ETAPA 2: Pollito Creciendo
+  push();
+    translate(220, 170);             
+    scale(1.1);                      
+    rotate(0);                      
+    drawAnimal(color(255, 220, 50), 6, 12);
+  pop();
+
+  // ETAPA 3: Pollo Joven 
+  push();
+    translate(380, 160);             
+    scale(1.5);                      
+    rotate(5);                      
+    drawAnimal(color(255, 180, 50), 10, 15);
+  pop();
+
+ 
+  // ETAPA 4: Pollo Adulto Joven
+  push();
+    translate(550, 145);             
+    scale(1.9);                      
+    rotate(-3);                      
+
+    drawAnimal(color(230, 120, 40), 15, 18);
+  pop();
+
+  
+  // ETAPA 5: Gallo 
+  push();
+    translate(720, 130);          
+    scale(2.3);                     
+    rotate(2);                      
+    drawAnimal(color(180, 60, 20), 22, 22);
+  pop();
+}
+
+function drawAnimal(colorCuerpo, tamCresta, tamPico) {
+  noStroke();
+
+  // 1. Cuerpo
+  fill(colorCuerpo);
+  ellipse(0, 0, 40, 35); 
+
+  // 2. Cabeza
+  ellipse(15, -18, 25, 25);
+
+  // 3. Cresta 
+  fill(220, 30, 30); // Rojo
+  ellipse(15, -18 - (12 + tamCresta/2), tamCresta, tamCresta + 4);
+
+  // 4. Pico 
+  fill(255, 165, 0); 
+  triangle(25, -20, 25 + tamPico, -17, 25, -13);
+
+  // 5. Ojo
+  fill(0);
+  ellipse(20, -20, 4, 4);
+
+  // 6. Patas
+  stroke(200, 100, 0);
+  strokeWeight(2);
+  line(-5, 15, -5, 30);  
+  line(10, 15, 10, 30);  
+  
+  
+  line(-5, 30, 0, 30);
+  line(10, 30, 15, 30);
+}
