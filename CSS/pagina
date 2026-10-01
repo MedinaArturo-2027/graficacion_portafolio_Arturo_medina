@@ -244,7 +244,7 @@
                             <h3>Actividad 2.1: Traslación</h3>
                             <p>Implementación de transformaciones geométricas (traslación, rotación y escala) manipulando la matriz con push() y pop().</p>
                         </div>
-                        <a href="#" target="_blank" class="btn-enlace">Ver Proyecto</a>
+                        <a href="https://editor.p5js.org/MEDINA_ARTURO0610/full/gBdV4-ubS" target="_blank" class="btn-enlace">Ver Proyecto</a>
                     </div>
 
                     <div class="tarjeta-actividad">
