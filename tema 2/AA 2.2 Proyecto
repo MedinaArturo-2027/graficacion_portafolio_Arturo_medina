@@ -1,0 +1,160 @@
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  angleMode(DEGREES);
+}
+
+function draw() {
+  
+  // color negro del fondo
+  background(0, 0,0);
+
+  //cempasúchil flotando en el fondo
+  for (let i = 0; i < 20; i++) {
+    fill(255, 140, 0, 50);
+    noStroke();
+    ellipse((i * 100) % width, (i * 150 + frameCount) % height, 4, 4);
+  }
+
+  // calavera principal en el centro (ancho y largo)
+  push();
+    translate(width / 2, height / 2); // Origen en el centro
+
+    // codigo para que palpite
+    let pulsoCalavera = map(sin(frameCount * 2), -1, 1, 0.95, 1.05);
+    scale(pulsoCalavera);
+
+    // craneo 
+    fill(245, 240, 235);
+  //borde rosa
+    stroke(255, 0, 120);
+    strokeWeight(4);
+    
+    // Craneo forna
+    ellipse(0, -30, 220, 220);
+    
+    // Mandíbula y dientes
+    //mandibula
+    rectMode(CENTER);
+    rect(0, 70, 130, 80, 15);
+    
+    // Dientes
+    stroke(20);
+    strokeWeight(2);
+    for (let x = -40; x <= 40; x += 20) {
+      line(x, 40, x, 100);
+    }
+    line(-50, 70, 50, 70);
+
+    // Nariz
+    fill(20);
+    noStroke();
+    triangle(0, 0, -12, 22, 12, 22);
+
+    // flores de cempasuchil 
+    fill(255, 140, 0);
+    ellipse(0, -110, 30, 30);
+    fill(255, 215, 0);
+    ellipse(-40, -100, 25, 25);
+    ellipse(40, -100, 25, 25);
+
+    //ojos que siguen el cursor
+    // posicion del ojo izquierdo
+    push();
+      translate(-50, -35); 
+      fill(20);
+      stroke(255, 140, 0);
+      strokeWeight(3);
+      ellipse(0, 0, 75, 75);
+
+      // Calcular dirección hacia el ratón
+      let dxIzq = mouseX - (width / 2 - 40);
+      let dyIzq = mouseY - (height / 2 - 40);
+      let anguloIzq = atan2(dyIzq, dxIzq);
+
+      // Desplazamiento de la pupila hacia el cursor
+      let pupilaX_Izq = cos(anguloIzq) * 10;
+      let pupilaY_Izq = sin(anguloIzq) * 10;
+
+      // lo que hace que los ojos se muevan 
+      push();
+        translate(pupilaX_Izq, pupilaY_Izq);
+
+        // Gira los espirales/engranajes internos
+        rotate(frameCount * 3); 
+
+        // cuencas de los ojos 
+        strokeWeight(3);
+        stroke(0, 255, 200);
+        line(-20, 0, 20, 0);
+        stroke(255, 0, 120);
+        line(0, -20, 0, 20);
+
+        // Centro brillante de las cuencas
+        noStroke();
+        fill(255, 220, 0);
+        ellipse(0, 0, 18, 18);
+        fill(255);
+        ellipse(0, 0, 6, 6);
+      pop();
+    pop();
+
+    // OJO DERECHO
+    push();
+  // posicion del ojo derecho
+      translate(50, -35); 
+      
+      // Cuenca ocular
+      fill(20);
+      stroke(255, 140, 0);
+      strokeWeight(3);
+      ellipse(0, 0, 75, 75);
+
+      // Calcular dirección hacia el ratón
+      let dxDer = mouseX - (width / 2 + 50);
+      let dyDer = mouseY - (height / 2 - 35);
+      let anguloDer = atan2(dyDer, dxDer);
+
+      // Desplazamiento de la pupila hacia el ratón
+      let pupilaX_Der = cos(anguloDer) * 10;
+      let pupilaY_Der = sin(anguloDer) * 10;
+
+      // Movimiento giratorio interno de los elementos del ojo
+      push();
+        translate(pupilaX_Der, pupilaY_Der);
+        rotate(-frameCount * 3); // Gira en sentido contrario
+
+        // Espiral / Elemento giratorio
+        strokeWeight(3);
+        stroke(255, 0, 120);
+        line(-20, 0, 20, 0);
+        stroke(0, 255, 200);
+        line(0, -20, 0, 20);
+
+        // Centro brillante
+        noStroke();
+        fill(255, 220, 0);
+        ellipse(0, 0, 18, 18);
+        fill(255);
+        ellipse(0, 0, 6, 6);
+      pop();
+    pop();
+
+  pop();
+
+// cursor en forma de vela ( haciendo alusion al dia de muertos por los puntos extras)
+  push();
+    translate(mouseX, mouseY);
+    noStroke();
+    fill(255, 140, 0, 120);
+    ellipse(0, 0, 30, 30);
+    fill(255, 230, 0);
+    ellipse(0, 0, 15, 20);
+    fill(255);
+    ellipse(0, 2, 6, 10);
+  pop();
+}
+
+  // lo que hace que el gif se adapte a cualquier pantalla sin que se vea feo
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
