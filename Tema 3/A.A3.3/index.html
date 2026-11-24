@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Three.js</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+    </style>
+    <!-- Mapa de importación para que el navegador sepa de dónde sacar Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- El canvas con el ID exacto que usa tu código -->
+    <canvas id="canvass"></canvas>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
